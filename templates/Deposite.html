@@ -1,0 +1,16 @@
+{% block content %}
+<h2>Deposite</h2>
+<form method="POST", action="{% url 'Deposite' %}">
+    {% csrf_token %}
+    <table>
+        {{ form.as_p }}
+        <tr>
+            <tr>
+            <td>Amount :
+            <input type="text" placeholder="Enter Amount" name="amount" required> </td>
+        </tr>
+            <td><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}
