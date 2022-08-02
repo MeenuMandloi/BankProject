@@ -1,0 +1,32 @@
+{% block content %}
+    <h1>All Users detail</h1>
+    <table border="2" width="100%" height="25%">
+        <tr style="color: brown">
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Account number</th>
+            <th>Account Balance</th>
+{#            <th>Update</th>#}
+{#            <th>Delete</th>#}
+        </tr>
+        {% for i in account_detail %}
+            <tr>
+
+                <td>{{ i.name }}</td>
+
+                <td>{{ i.phone }}</td>
+
+                <td>{{ i.email }}</td>
+
+                <td>{{ i.address }}</td>
+
+                <td>{{ i.account_no }}</td>
+
+                <td>{{ i.initial_amount }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

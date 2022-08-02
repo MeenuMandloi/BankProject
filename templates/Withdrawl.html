@@ -1,0 +1,20 @@
+{% block content %}
+    <center>
+<h2>Withdrawl your Amount</h2><br><br>
+<form method="POST", action="{% url 'withdrawl' %}">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <tr>
+        <td><h1>Name : {{ name }}</h1></td></tr><br><br>
+        <tr>
+            <td><h1>Account Number :  {{ account_no }}</h1></td></tr><br><br>
+            <td>Amount :
+            <input type="text" placeholder="Enter Amount" name="debit_amount" required> </td><br><br>
+        </tr>
+            <td><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+</form>
+    </center>
+{% endblock %}

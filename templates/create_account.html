@@ -13,7 +13,7 @@ Bank Account Form
 <form action={% url "create_account" %} method="POST" enctype='multipart/form-data'>
 {% csrf_token %}
 <label> Name </label>
-<input type="text" name="name" size="15" value="{{ user.firstname }}"/> <br><hr>
+<input type="text" name="name" size="15" value="{{ user.firstname }} {{ user.lastname }}"/> <br><hr>
 
     <label>Email:</label>
 <input type="email" id="email" name="email" value="{{ user.email }}"/><br><hr>
@@ -29,7 +29,7 @@ Gender :
 <input type="text" id="account" name="account"><br><br><hr>
 
     <label>Initial Amount:</label>
-    <input type="text" id="amount" name="amount" value="1000">
+    <input type="text" id="amount" name="initial_amount" value="1000">
     <br><hr>
 
 <label>Phone :</label>
@@ -39,7 +39,6 @@ Gender :
 <textarea cols="30" rows="4" name="address" value="address">
 </textarea>
 <br><hr>
-
 <button type="submit" >Submit</button>
 </form>
     </center>

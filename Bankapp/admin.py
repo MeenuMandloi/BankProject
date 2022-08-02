@@ -1,7 +1,12 @@
 from django.contrib import admin
-from .models import Register, Create_account
+from .models import Register, Createaccount, TrasactionDetails
 
 
-admin.site.register(Register),
-admin.site.register(Create_account)
+class RegisterAdmin(admin.ModelAdmin):
+    model = Register
+    list_display = ("id", "firstname")
 
+
+admin.site.register(Register, RegisterAdmin),
+admin.site.register(Createaccount),
+admin.site.register(TrasactionDetails),

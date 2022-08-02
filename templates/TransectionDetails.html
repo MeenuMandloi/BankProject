@@ -1,0 +1,31 @@
+{% block content %}
+    <h1>All Transection details</h1>
+    <table border="2" width="100%">
+        <tr style="color: brown">
+            <th>Date</th>
+            <th>Remark</th>
+            <th>To Account number</th>
+            <th>Credit</th>
+            <th>Debit</th>
+            <th>Closing Balance</th>
+        </tr>
+        {% for detail in transaction_detail %}
+            <tr>
+                <td>{{ detail.transaction_date }}</td>
+
+                <td>{{ detail.remark }}</td>
+
+                <td>{{ detail.to_acc }}</td>
+
+                <td> {{ detail.credit_amount }}</td>
+
+                <td>{{ detail.debit_amount }}</td>
+
+                <td>{{ detail.closing_balance }}</td>
+            </tr>
+        {% endfor %}
+
+
+    </table>
+
+{% endblock %}

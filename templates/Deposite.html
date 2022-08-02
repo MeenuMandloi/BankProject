@@ -1,16 +1,20 @@
 {% block content %}
-<h2>Deposite</h2>
-<form method="POST", action="{% url 'Deposite' %}">
+    <center>
+<h2>Deposite your Amount</h2><br><br>
+<form method="POST", action="{% url 'deposite' %}">
     {% csrf_token %}
     <table>
-        {{ form.as_p }}
         <tr>
             <tr>
+        <td><h1>Name : {{ name }}</h1></td></tr><br><br>
+        <tr>
+            <td><h1>Account Number :  {{ account_no }}</h1></td></tr><br><br>
             <td>Amount :
-            <input type="text" placeholder="Enter Amount" name="amount" required> </td>
+            <input type="text" placeholder="Enter Amount" name="credit_amount" required> </td><br><br>
         </tr>
             <td><input type="submit" value="Submit"></td>
         </tr>
     </table>
 </form>
+    </center>
 {% endblock %}

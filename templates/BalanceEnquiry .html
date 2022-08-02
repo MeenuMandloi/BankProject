@@ -1,3 +1,4 @@
+{% block content %}
 <html lang="en">
 <head>
     <title>Home Page</title>
@@ -8,11 +9,12 @@
     <br>
     <hr>
     <marquee><h3>We Work For Your Better Tommorrow</h3></marquee>
-    <br>
     <hr>
-    <br>
-    <h1>Your Account Balance is {{ user.amount }}</h1>
+    <h1>Name : {{ name }}</h1><br>
+    <h1>Account Number :  {{ account_no }}</h1><br>
+    <h1>Your Account Balance is : {{ closing_balance }}</h1>
 </center>
 
 </body>
 </html>
+{% endblock %}

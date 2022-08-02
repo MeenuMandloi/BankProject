@@ -1,0 +1,24 @@
+{% block content %}
+    <center>
+<h2>Transfer Money</h2>
+<form method="POST", action="{% url 'transferMoney' %}">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <tr>
+        <td><h1>Name : {{ name }}</h1></td></tr><br><br>
+        <tr>
+            <td><h1>Account Number :  {{ account_no }}</h1></td></tr><br><br>
+        <td>To :
+            <input type="text" placeholder="Enter Account number" name="to_acc" required></td>
+        <br><br><br>
+        <tr>
+            <td>Amount :
+                <input type="text" placeholder="Enter Amount" name="debit_amount" required> </td></tr><br>
+        </tr>
+            <td><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+</form>
+    </center>
+{% endblock %}

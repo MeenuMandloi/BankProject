@@ -12,7 +12,7 @@ class Register(models.Model):
         return self.firstname
 
 
-class Create_account(models.Model):
+class Createaccount(models.Model):
     Register = models.OneToOneField(
         Register,
         on_delete=models.CASCADE, null=True, blank=True)
@@ -27,7 +27,21 @@ class Create_account(models.Model):
     address = models.CharField(max_length=50)
     account_type = models.CharField(max_length=20)
     password = models.CharField(max_length=8)
-    amount = models.IntegerField(default=1000)
+    initial_amount = models.IntegerField(default=1000)
+    account_no = models.PositiveBigIntegerField(null=True, blank=True)
+    rec_acc = models.PositiveBigIntegerField(null=True, blank=True)
 
     def __str__(self):
         return self.name
+
+class TrasactionDetails(models.Model):
+    acc_detail = models.ForeignKey(Createaccount, on_delete=models.CASCADE)
+    debit_amount = models.IntegerField(blank=True, default=00)
+    credit_amount = models.IntegerField(blank=True, default=00)
+    to_acc = models.IntegerField(blank=True, null=True)
+    closing_balance = models.IntegerField(blank=True, null=True)
+    transaction_date = models.DateTimeField(auto_now_add=True)
+    remark = models.CharField(max_length=25)
+
+    def __str__(self):
+        return self.acc_detail.name

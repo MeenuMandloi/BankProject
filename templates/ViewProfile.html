@@ -1,0 +1,11 @@
+{% block content %}
+ <center>   <h1>Welcome to my Profile</h1>
+    <h2> Name : {{ account_detail.acc_detail.name }}</h2>
+     <h2> Account number : {{ account_detail.acc_detail.account_no }}</h2>
+     <h2> Email : {{ account_detail.acc_detail.email }}</h2>
+     <h2> Address : {{ account_detail.acc_detail.address }}</h2>
+     <h2> Phone : {{ account_detail.acc_detail.phone }}</h2>
+    <h2> Your account balance : {{ account_detail.closing_balance }}</h2>
+ </center>
+
+{% endblock %}
